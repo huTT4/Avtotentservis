@@ -1,0 +1,66 @@
+@use "../mixins" as *;
+
+.repair {
+  background: var(--black-4);
+
+  &__card {
+    border: 1px solid var(--black-10);
+    border-radius: 16px;
+    padding: .5rem;
+    background: var(--black-90);
+    display: flex;
+
+    &-img {
+      border-radius: 8px;
+      margin-right: 0.5rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-content {
+      padding: clamp(.5rem, 2.5vw, 2rem);
+
+      h4 {
+        color: var(--white);
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        line-height: 122%;
+        @include flex-column;
+
+        span {
+          color: var(--black-50);
+        }
+      }
+
+      div {
+        @include flex-column;
+        gap: clamp(.5rem, 1vw, 1rem);
+        margin-bottom: clamp(1rem, 2vw, 2rem);
+
+        h5 {
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 137%;
+          color: var(--white);
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+
+          li {
+            position: relative;
+            padding-left: 0.5rem;
+
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 137%;
+            color: var(--black-30);
+          }
+        }
+      }
+    }
+  }
+}

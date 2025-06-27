@@ -1,0 +1,146 @@
+@use "../mixins" as *;
+
+.catalog {
+  background: linear-gradient(180deg, #f5f5f6 0%, #fff 100%);
+  padding: clamp(2rem, 6.5vw, 5.625rem) 0;
+  width: 100%;
+
+  &__list {
+    @include flex-justify-center;
+    flex-wrap: wrap;
+    gap: clamp(15px, 2vw, 20px);
+    margin-bottom: clamp(1.5rem, 2vw, 2.125rem);
+
+    &-item {
+      flex: 1;
+      max-width: clamp(340px, 30vw, 380px);
+      min-width: 300px;
+      border: 1px solid var(--black-10);
+      border-radius: 16px;
+      padding: .5rem;
+      background: var(--white);
+      transition: var(--duration);
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &-img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 8px;
+      }
+
+      &-content {
+        padding: 0.75rem 1.5rem 1.5rem;
+
+        h4 {
+          font-size: 1.5rem;
+          line-height: 125%;
+          color: var(--black-100);
+          margin-bottom: 1.25rem;
+
+          span {
+            font-weight: 600;
+            font-size: 1.625rem;
+            line-height: 123%;
+            color: var(--black-20);
+          }
+        }
+      }
+    }
+  }
+
+  &__deadlines {
+    border-radius: 16px;
+    padding: .5rem;
+    background: var(--black-90);
+    display: flex;
+
+    @include tablet {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+
+    &-img {
+      border-radius: 8px;
+      margin-right: .5rem;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-content {
+      padding: clamp(.5rem, 2.5vw, 2rem);
+
+      h4 {
+        color: var(--white);
+
+        span {
+          color: var(--black-50);
+        }
+      }
+
+      ul {
+        @include flex-all-sb;
+        flex-wrap: wrap;
+        gap: clamp(0rem, 1.5vw, 1.25rem);
+        margin-bottom: clamp(.75rem, 2.5vw, 2rem);
+
+        @include small-mobile {
+          justify-content: center;
+        }
+
+        li {
+          @include flex-align-center;
+          flex-direction: column;
+          gap: .25rem;
+          max-width: 164px;
+
+          img {
+            margin-bottom: 0.25rem;
+          }
+
+          h5 {
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 133%;
+            text-align: center;
+            color: var(--black-30);
+          }
+
+          h6 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 125%;
+            text-align: center;
+            color: var(--white);
+
+            span {
+              color: var(--blue-100);
+            }
+          }
+        }
+      }
+
+      div {
+        @include flex-align-center;
+        justify-content: flex-end;
+
+        p {
+          font-weight: 600;
+          font-size: 1.125rem;
+          line-height: 133%;
+          color: var(--white);
+          margin-right: 2.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use "../../mixins" as *;
+
+.btn {
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 146%;
+  letter-spacing: 0.02rem;
+  color: var(--white);
+
+  background: var(--blue-100);
+  border-radius: 6px;
+  padding: 0.75rem 1.7rem;
+  width: fit-content;
+
+  transition: var(--duration);
+
+  &:hover {
+    background: var(--blue-80);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.btn--arrow {
+  @include flex-align-center;
+  gap: .5rem;
+}
+
+.btn--big {
+  font-size: clamp(.85rem, 2vw, 1rem);
+  line-height: 137%;
+  letter-spacing: 0;
+
+  padding: clamp(.75rem, 2vw, 1.75rem) clamp(1.7rem, 2vw, 2.5rem);
+  border-radius: 8px;
+
+  @include flex-align-center;
+  gap: clamp(.5rem, 2vw, 1rem);
+}

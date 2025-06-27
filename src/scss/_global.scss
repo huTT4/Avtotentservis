@@ -1,0 +1,39 @@
+html {
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  font-family: "Inter Tight", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding) * 2);
+  padding: 0 var(--container-padding);
+  width: 100%;
+  margin: 0 auto;
+}

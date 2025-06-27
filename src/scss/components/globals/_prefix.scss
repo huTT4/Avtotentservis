@@ -1,0 +1,17 @@
+.prefix {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: var(--green-100);
+  transform: rotate(20deg);
+  position: absolute;
+  left: 0;
+}
+
+.prefix--gray {
+  background: var(--black-20);
+}
+
+.prefix--red {
+  background: var(--red-100);
+}

@@ -1,0 +1,21 @@
+@use "vars";
+@use "fonts";
+@use "global";
+
+//global components
+@use "./components/globals/globals";
+
+// components
+@use "./components/header";
+@use "./components/hero";
+@use "./components/services";
+@use "./components/catalog";
+@use "./components/price";
+@use "./components/quality";
+@use "./components/repair";
+@use "./components/works";
+@use "./components/sequence";
+@use "./components/price2";
+@use "./components/questions";
+@use "./components/description";
+@use "./components/footer";

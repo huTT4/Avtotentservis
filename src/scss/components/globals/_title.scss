@@ -1,0 +1,11 @@
+.title {
+  font-weight: 600;
+  font-size: clamp(2.25rem, 3.5vw, 3.125rem);
+  line-height: 124%;
+  color: var(--black-100);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+}
+
+.title--center {
+  text-align: center;
+}

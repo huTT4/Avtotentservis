@@ -1,0 +1,178 @@
+@use "../mixins" as *;
+
+.footer {
+  &__top {
+    background: var(--black-90);
+    padding: clamp(1.5rem, 2.5vw, 2.5rem) 0;
+
+    &-wrapper {
+      &-main {
+        @include flex-start-sb;
+        margin-bottom: clamp(.75rem, 3vw, 2rem);
+
+        @include tablet {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: clamp(1rem, 2vw, 3rem);
+        }
+
+        &-title {
+          max-width: 368px;
+          @include flex-all-sb;
+          gap: clamp(.5rem, 2vw, 1rem);
+
+          h4 {
+            font-weight: 600;
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            line-height: 125%;
+            color: var(--white);
+
+            span {
+              color: var(--blue-100);
+              background: none;
+            }
+          }
+
+          span {
+            width: 2px;
+            height: 20px;
+            background: var(--black-80);
+          }
+
+          p {
+            font-weight: 400;
+            font-size: clamp(.65rem, 1.5vw, .8125rem);
+            line-height: 146%;
+            letter-spacing: 0.02em;
+            color: var(--white);
+          }
+        }
+
+        &-lists {
+          @include flex-start-sb;
+          gap: clamp(2rem, 6vw, 5.4375rem);
+
+          ul {
+            @include flex-column;
+            gap: clamp(.4rem, 1.5vw, .9375rem);
+
+            li {
+              @include flex-align-center;
+              gap: .375rem;
+              font-weight: 500;
+              font-size: clamp(.8rem, 1.5vw, 1rem);
+              line-height: 137%;
+              color: var(--black-20);
+              cursor: pointer;
+              transition: var(--duration);
+
+              &:hover {
+                opacity: .8;
+              }
+            }
+          }
+        }
+
+        &-contacts {
+          @include flex-column;
+          align-items: center;
+          gap: .5rem;
+
+          div {
+            display: flex;
+            gap: .5rem;
+
+            img {
+              cursor: pointer;
+              transition: var(--duration);
+
+              &:hover {
+                opacity: .8;
+              }
+
+              &:active {
+                transform: scale(.95);
+              }
+            }
+          }
+
+          a {
+            @include flex-column;
+            align-items: center;
+            gap: .25rem;
+            font-weight: 600;
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            line-height: 125%;
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--duration);
+            white-space: nowrap;
+
+            &:hover {
+              opacity: .8;
+            }
+
+            &:active {
+              transform: scale(.95);
+            }
+
+            p {
+              font-weight: 500;
+              font-size: clamp(.9rem, 1.5vw, 1rem);
+              line-height: 137%;
+              color: var(--white);
+              border-bottom: 1px solid var(--blue-100);
+              padding: 0 0 .25rem 0;
+              width: fit-content;
+            }
+          }
+        }
+      }
+
+      &-info {
+        @include flex-align-start;
+        gap: clamp(1rem, 3vw, 2.5rem);
+
+        p {
+          font-weight: 400;
+          font-size: clamp(.9rem, 1.5vw, 1rem);
+          line-height: 137%;
+          color: var(--black-40);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    background: var(--black-100);
+
+    &-wrapper {
+      @include flex-all-sb;
+      font-weight: 400;
+      font-size: clamp(.65rem, 1vw, .8125rem);
+      letter-spacing: 0.02em;
+      line-height: 146%;
+      color: var(--black-40);
+      padding: 0.75rem 0;
+      gap: 1rem;
+
+      a {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: var(--black-40);
+      }
+
+      h5 {
+        font-weight: 400;
+        font-size: clamp(.65rem, 1vw, .8125rem);
+        color: var(--white);
+        white-space: nowrap;
+
+        span {
+          color: var(--blue-100);
+        }
+      }
+    }
+  }
+}

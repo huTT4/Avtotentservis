@@ -1,0 +1,89 @@
+@use "../mixins" as *;
+
+.works {
+  background: linear-gradient(180deg, #f5f5f6 0%, #fff 100%);
+  padding: clamp(2rem, 6.5vw, 5.625rem) 0;
+
+  &__title {
+    @include flex-all-sb;
+    gap: 1rem;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    div {
+      display: flex;
+      gap: .5rem;
+
+      span {
+        border: 1px solid var(--black-10);
+        border-radius: 8px;
+        padding: 0.8125rem;
+        width: 50px;
+        height: 50px;
+        background: var(--white);
+        @include flex-all-center;
+        cursor: pointer;
+        transition: var(--duration);
+
+        &:hover {
+          background: var(--black-4);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    margin: 0 -0.3rem;
+    padding: 0 .2rem;
+
+    @media (max-width: 1240px) {
+      max-width: 888px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    @include tablet {
+      max-width: 593px;
+    }
+
+    @include small-tablet {
+      max-width: 592px;
+    }
+
+    @media (max-width: 635px) {
+      max-width: 332px;
+    }
+
+    &-wrapper {
+      display: flex;
+      gap: .5rem;
+
+      &-item {
+        flex-shrink: 0;
+        border: 1px solid var(--black-10);
+        border-radius: 8px;
+        width: 289px !important;
+        height: 205px;
+        background: var(--white);
+        overflow: hidden;
+        @include flex-justify-center;
+
+        @media (max-width: 635px) {
+          width: 325px !important;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
